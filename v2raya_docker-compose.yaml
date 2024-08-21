@@ -1,0 +1,18 @@
+services:
+  v2raya:
+    restart: always
+    privileged: true
+    network_mode: host
+    container_name: v2raya
+    environment:
+      - V2RAYA_V2RAY_BIN=/usr/local/bin/xray
+      - V2RAYA_LOG_FILE=/tmp/v2raya.log
+      - V2RAYA_NFTABLES_SUPPORT=off
+      - IPTABLES_MODE=legacy
+      - V2RAYA_VERBOSE=true
+    volumes:
+      - '/etc/v2raya:/etc/v2raya'
+      - '/etc/resolv.conf:/etc/resolv.conf'
+      - '/lib/modules:/lib/modules:ro'
+    image: 'mzz2017/v2raya:latest'
+
