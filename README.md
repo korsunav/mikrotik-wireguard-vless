@@ -8,6 +8,8 @@ In your intranet: Create VM with V2rayA and WireGuard
  1. Deploy VM on Linux. In this case we will use Oracle Linux 9
  2. Install Docker by this instruction - https://docs.docker.com/engine/install/rhel/
  3. Run container with V2rayA by docker compose:
+<details>
+ 
 ```yaml
 services:
   v2raya:
@@ -27,7 +29,11 @@ services:
       - '/lib/modules:/lib/modules:ro'
     image: 'mzz2017/v2raya:latest'
 ```
+</details>
+
  4. Run container with wg-easy also by docker compose
+<details>
+ 
 ```yaml
 volumes:
   etc_wireguard:
@@ -58,6 +64,8 @@ services:
       - net.ipv4.ip_forward=1
       - net.ipv4.conf.all.src_valid_mark=1
 ```
+</details>
+
 Configure V2rayA
 
 Configure WireGuard
