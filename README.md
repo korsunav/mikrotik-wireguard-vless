@@ -14,7 +14,7 @@
 
 #### 1.1. Deploy the VM on Linux
 
-For this guide, Oracle Linux 9 will be used.
+For this guide, Oracle Linux 9 will be used. Please turn off SELinux and Firewalld during setup, it will probably save your time.
 
 #### 1.2. Install Docker
 
@@ -137,7 +137,7 @@ services:
 6. Add a new WireGuard address to the address list:
 
     ```bash
-    /ip address add address=<Your WG IP> interface=wg0 network=<Your WG network>
+    /ip address add address=<Your client WG IP with CIDR> interface=<Your WG interface> network=<Your WG network>
     ```
 
     Example:
