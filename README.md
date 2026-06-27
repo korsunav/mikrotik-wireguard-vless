@@ -184,7 +184,11 @@ services:
      ```
 
      Then paste into terminal.
-
+     
+9. ***Extra*** Add routing rules for CIDR blocs or IPs:
+   ```bash
+   /routing rule add dst-address=91.108.56.0/22 action=lookup table=to-proxy
+   ```
 ---
 
 ## ✅ Done!
